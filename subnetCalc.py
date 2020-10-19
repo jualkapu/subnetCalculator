@@ -46,7 +46,7 @@ def getInput():
 		sys.exit()
 
 
-#Muuttaa IP Binaari muotoon.
+#Muuttaa IP Binaari muotoon
 def toBinary(ip):
 	octets = ip.split('.')
 	#octets taulukon jokainen octetti muutetaan 8 merkin pituiseksi binaariksi
