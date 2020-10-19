@@ -32,7 +32,7 @@ def isMaskValid(mask):
 
 #Ottaa syotteen ja tarkistaa, etta se on oikeassa muodossa. Palauttaa taulukon jossa prefix ja maski
 def getInput():
-	syote = input("Syotä IP-osoite ja maski muodossa x.x.x.x/y: ")
+	syote = input("Enter IP and mask in format: x.x.x.x/y: ")
 	if '/' in syote:
 		a = syote.split('/')
 		#Tarkistetaan oikea muoto. Jos virheellinen niin lopetetaan
