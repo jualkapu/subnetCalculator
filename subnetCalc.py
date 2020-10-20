@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+# coding=utf-8
 import sys
 
 #Tarkistaa onko syotetty IP osoite validi ja oikeassa muodossa
@@ -10,7 +11,7 @@ def isIpValid(ip):
 	else:
 		for octet in octets:
 			#Tarkistetaan, etta oktetit sisaltavat vain numeroita
-			if(not octet.isnumeric()):
+			if(not unicode(octet, 'utf-8').isnumeric()):
 				return False
 			else:
 				#Tarkistetaan, etta valideja numeroita
@@ -21,7 +22,7 @@ def isIpValid(ip):
 
 #Tarkistaa onko syotetty maski validi ja oikeassa muodossa
 def isMaskValid(mask):
-	if(not mask.isnumeric()):
+	if(not unicode(mask, 'utf-8').isnumeric()):
 		return False
 	else:
 		#Tarkistetaan, etta sisaltaa vain valideja numeroita
@@ -32,7 +33,7 @@ def isMaskValid(mask):
 
 #Ottaa syotteen ja tarkistaa, etta se on oikeassa muodossa. Palauttaa taulukon jossa prefix ja maski
 def getInput():
-	syote = input("Enter IP and mask in format: x.x.x.x/y: ")
+	syote = raw_input("Enter IP and mask in format: x.x.x.x/y: ")
 	if '/' in syote:
 		a = syote.split('/')
 		#Tarkistetaan oikea muoto. Jos virheellinen niin lopetetaan
